@@ -1,0 +1,19 @@
+Sat Aug 26 2023 14:58:33 } [PH] error: 
+Invalid `prisma.academicSemester.create()` invocation in
+E:\ProgrammingHeroNextLevel\coreService\src\app\modules\academicSemester\services.ts:13:48
+
+  10 const insertToDB = async (
+  11   data: AcademicSemester
+  12 ): Promise<AcademicSemester> => {
+→ 13   const result = await prisma.academicSemester.create({
+         data: {
+           year: "2023",
+                 ~~~~~~
+           title: "Autum",
+           code: "01",
+           startMonth: "January",
+           endMonth: "June"
+         }
+       })
+
+Argument `year`: Invalid value provided. Expected Int, provided String.
