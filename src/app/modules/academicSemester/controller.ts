@@ -5,6 +5,10 @@ import catchAsync from '../../../shared/catchAsync';
 import pick from '../../../shared/pick';
 import sendResponse from '../../../shared/sendResponse';
 import { academicSemesterService } from './services';
+import {
+  AcademicSemesterFilterQuery,
+  AcademicSemesterOptionsQuery,
+} from './constants';
 
 const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
   const result = await academicSemesterService.insertToDB(req.body);
@@ -17,8 +21,8 @@ const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
-  const filters = pick(req.query, ['searchTerm', 'code', 'year']);
-  const options = pick(req.query, ['limit', 'page', 'sortBy', 'sortOrder']);
+  const filters = pick(req.query, AcademicSemesterFilterQuery);
+  const options = pick(req.query, AcademicSemesterOptionsQuery);
   const result = await academicSemesterService.getAllFromDb(filters, options);
 
   sendResponse(res, {
@@ -30,7 +34,19 @@ const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const getDataById = catchAsync(async (req: Request, res: Response) => {
+  const result = await academicSemesterService.getDataById(req.params.id);
+  
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Academic Semester data fatched',
+    data: result,
+  });
+});
+
 export const AcademicSemesterController = {
   insertIntoDB,
   getAllFromDB,
+  getDataById
 };
