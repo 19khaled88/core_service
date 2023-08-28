@@ -57,6 +57,9 @@ const getAllFromDb = async (
       options.sortBy && options.sortOrder
         ? { [options.sortBy]: options.sortOrder }
         : { createdAt: 'desc' },
+    include:{
+      students:true
+    }
   });
 
   const total = await prisma.academicSemester.count();
@@ -74,14 +77,60 @@ const getAllFromDb = async (
 const getDataById = async (id: string): Promise<AcademicSemester | null> => {
   const result = await prisma.academicSemester.findUnique({
     where: {
-      id:id
+      id: id,
     },
   });
   return result;
 };
 
+const updateDataById = async (
+  id: string,
+  payload: Partial<AcademicSemester>
+): Promise<AcademicSemester> => {
+  const isExist = await prisma.academicSemester.findFirstOrThrow({
+    where: {
+      id: id,
+    },
+  });
+  if (!isExist.NotFoundError && isExist.id === id) {
+    const isUpdated = await prisma.academicSemester.update({
+      where: {
+        id: id,
+      },
+      data: payload,
+    });
+    return isUpdated;
+  } else {
+    return isExist;
+  }
+};
+
+const deleteDataById = async (id: string): Promise<AcademicSemester | null> => {
+  const isExist = await prisma.academicSemester.findFirstOrThrow({
+    where: {
+      id: id,
+    },
+    include:{
+      students:true
+    }
+  });
+
+  if (!isExist.NotFoundError && isExist.id === id) {
+    const isDeleted = await prisma.academicSemester.delete({
+      where: {
+        id: id,
+      },
+    });
+    return isDeleted;
+  } else {
+    return isExist;
+  }
+};
+
 export const academicSemesterService = {
   insertToDB,
   getAllFromDb,
-  getDataById
+  getDataById,
+  updateDataById,
+  deleteDataById,
 };

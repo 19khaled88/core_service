@@ -54,6 +54,36 @@
             "date": 1693134148522,
             "name": "E:\\ProgrammingHeroNextLevel\\coreService\\logs\\winston\\errors\\phu-2023-27-08-17-error.log",
             "hash": "ae95bf978657de1cdc8357f6b8c40c6aa5c88c3362cc0559f4decbb447920a43"
+        },
+        {
+            "date": 1693197443723,
+            "name": "E:\\ProgrammingHeroNextLevel\\coreService\\logs\\winston\\errors\\phu-2023-28-08-10-error.log",
+            "hash": "04ddceaf17a7a6235a23fb878db0f7ecd758452e8c1e84a1077101e46c0d8622"
+        },
+        {
+            "date": 1693198884239,
+            "name": "E:\\ProgrammingHeroNextLevel\\coreService\\logs\\winston\\errors\\phu-2023-28-08-11-error.log",
+            "hash": "bbbde0b0f12cc46cc9b0a234f4967bca85468fa1b73e096a3e3a049d64dd2bfa"
+        },
+        {
+            "date": 1693204173046,
+            "name": "E:\\ProgrammingHeroNextLevel\\coreService\\logs\\winston\\errors\\phu-2023-28-08-12-error.log",
+            "hash": "4159ed9b36b0ea1657a798e45bf74d9c75b518bac1a883d0c95e276a2d72e84b"
+        },
+        {
+            "date": 1693206539662,
+            "name": "E:\\ProgrammingHeroNextLevel\\coreService\\logs\\winston\\errors\\phu-2023-28-08-13-error.log",
+            "hash": "c420284fde5dd18f6728c6ba267d58fb8aa18880912f9162a00a7bf0b82fdf47"
+        },
+        {
+            "date": 1693211651484,
+            "name": "E:\\ProgrammingHeroNextLevel\\coreService\\logs\\winston\\errors\\phu-2023-28-08-14-error.log",
+            "hash": "3617da0bf318bc492d32e1985bb9b7c96c761c634d02171c9d6f10d7e0224e2b"
+        },
+        {
+            "date": 1693214191551,
+            "name": "E:\\ProgrammingHeroNextLevel\\coreService\\logs\\winston\\errors\\phu-2023-28-08-15-error.log",
+            "hash": "6ab496c75e0b4428e18323be1bfc76bbc93511c1432b3a1725295a2defd3ca3d"
         }
     ],
     "hashType": "sha256"
