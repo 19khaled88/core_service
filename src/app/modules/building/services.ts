@@ -1,4 +1,4 @@
-import { Building, PrismaClient } from '@prisma/client';
+import { Building,PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 const insertIntoDB = async (data: Building): Promise<Building> => {
@@ -35,7 +35,7 @@ const updateDataById = async (
       id: id,
     },
   });
-  if (!isExist.NotFoundError && isExist.id === id) {
+  if (isExist && isExist.id === id) {
     const isUpdated = await prisma.building.update({
       where: {
         id: id,
@@ -54,7 +54,7 @@ const deletedDataById = async (id: string):Promise<Building> => {
       id: id,
     },
   });
-  if (!isExist.NotFoundError && isExist.id === id) {
+  if (isExist && isExist.id === id) {
     const isDeleted = await prisma.building.delete({
       where: {
         id: id,
