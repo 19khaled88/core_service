@@ -21,6 +21,7 @@ const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
+  
   const filters = pick(req.query, AcademicSemesterFilterQuery);
   const options = pick(req.query, AcademicSemesterOptionsQuery);
   const result = await academicSemesterService.getAllFromDb(filters, options);
@@ -45,7 +46,7 @@ const getDataById = catchAsync(async (req: Request, res: Response) => {
 });
 
 const updateDataById = catchAsync(async (req: Request, res: Response) => {
-  const options = { id: req.params.id, body: req.body };
+  // const options = { id: req.params.id, body: req.body };
   const result = await academicSemesterService.updateDataById(
     req.params.id,
     req.body

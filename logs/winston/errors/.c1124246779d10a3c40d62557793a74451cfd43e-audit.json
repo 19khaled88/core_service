@@ -6,14 +6,14 @@
     "auditLog": "D:\\programmingheroNextLevel\\coreService-1\\logs\\winston\\errors\\.c1124246779d10a3c40d62557793a74451cfd43e-audit.json",
     "files": [
         {
-            "date": 1693074608023,
-            "name": "D:\\programmingheroNextLevel\\coreService-1\\logs\\winston\\errors\\phu-2023-27-08-00-error.log",
-            "hash": "ba8958122875fd52665a437202d67a059400a63f421f9527a58ba3294b303646"
+            "date": 1695575533803,
+            "name": "D:\\programmingheroNextLevel\\coreService-1\\logs\\winston\\errors\\phu-2023-24-09-23-error.log",
+            "hash": "7382bf8cb1ceb11e930a09cda6db6557625d60ddf5ed2e77e240e1745b8339fa"
         },
         {
-            "date": 1693250862615,
-            "name": "D:\\programmingheroNextLevel\\coreService-1\\logs\\winston\\errors\\phu-2023-29-08-01-error.log",
-            "hash": "f8628c355325c48b909e24be582c2577754c5b13af8c5b375d66e2064ea04315"
+            "date": 1695579875862,
+            "name": "D:\\programmingheroNextLevel\\coreService-1\\logs\\winston\\errors\\phu-2023-25-09-00-error.log",
+            "hash": "c2dcee1ba189ef427f6f795502f01654ac4347e4de4cd6a9b22d81a999a2f5c9"
         }
     ],
     "hashType": "sha256"

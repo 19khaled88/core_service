@@ -5,7 +5,6 @@ import { IPaginationOptions } from '../../../interfaces/pagination';
 import { IAcademicSemesterFilterRequest } from './interface';
 import { AcademicSemesterSearchableFiels } from './constants';
 
-
 const prisma = new PrismaClient();
 
 const insertToDB = async (
@@ -58,9 +57,9 @@ const getAllFromDb = async (
       options.sortBy && options.sortOrder
         ? { [options.sortBy]: options.sortOrder }
         : { createdAt: 'desc' },
-    include:{
-      students:true
-    }
+    include: {
+      students: true,
+    },
   });
 
   const total = await prisma.academicSemester.count();
@@ -93,7 +92,7 @@ const updateDataById = async (
       id: id,
     },
   });
-  if (isExist &&  isExist.id === id) {
+  if (isExist && isExist.id === id) {
     const isUpdated = await prisma.academicSemester.update({
       where: {
         id: id,
@@ -111,11 +110,10 @@ const deleteDataById = async (id: string): Promise<AcademicSemester | null> => {
     where: {
       id: id,
     },
-    include:{
-      students:true
-    }
+    include: {
+      students: true,
+    },
   });
-  
 
   if (isExist && isExist.id === id) {
     const isDeleted = await prisma.academicSemester.delete({

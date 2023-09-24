@@ -15,3 +15,11 @@ const pick = <T extends Record<string, unknown>, k extends keyof T>(
 };
 
 export default pick;
+
+const picks = <T extends Record<string, unknown>, K extends keyof T>(
+  obj: T,
+  keys: K
+) => {
+  return obj[keys];
+};
+export const Picks = { picks };
